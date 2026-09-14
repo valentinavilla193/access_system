@@ -13,7 +13,7 @@ stateDiagram-v2
     VALIDANDO --> ACCEDIO: contraseña correcta
     VALIDANDO --> DENEGADO: contraseña incorrecta
 
-    CONTRASENIA_DINAMICA --> ESPERANDO: 4 caracteres nuevos
+    PASS_DINAMICA --> ESPERANDO: 4 caracteres nuevos
 
     ACCEDIO --> ESPERANDO: 3 s
     DENEGADO --> ESPERANDO: 3 s
@@ -26,7 +26,7 @@ stateDiagram-v2
 - `VALIDANDO`: compara los cuatro caracteres ingresados.
 - `ACCEDIO`: muestra la figura de acceso.
 - `DENEGADO`: muestra una X.
-- `CONTRASENIA_DINAMICA`: recibe una nueva contraseña después de ingresar `****`.
+- `PASS_DINAMICA`: recibe una nueva contraseña después de ingresar `****`.
 
 ## 2. Máquina de estados del antirrebote
 
