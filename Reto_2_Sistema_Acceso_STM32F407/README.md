@@ -50,11 +50,8 @@ Reto_2_Sistema_Acceso_STM32F407/
 │       └── timebase.c
 │
 ├── docs/
-│   ├── arquitectura.md
 │   ├── conexiones.md
-│   ├── diagramas_estados.md
-│   ├── explicacion_codigo.md
-│   └── pruebas.md
+│   └── diagramas_estados.md
 │
 ├── .gitignore
 └── README.md
