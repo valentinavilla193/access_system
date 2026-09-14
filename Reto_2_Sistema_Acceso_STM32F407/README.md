@@ -28,7 +28,6 @@ La contraseña inicial definida en el programa es:
 ABCD
 ```
 
-También se implementó una función adicional: al ingresar `****`, el sistema permite registrar una nueva contraseña de cuatro caracteres.
 
 ## Estructura del repositorio
 
@@ -115,7 +114,6 @@ ACCESO  DENEGADO
     ESPERANDO
 ```
 
-También incorpora el estado `CONTRASENIA_DINAMICA` para cambiar la contraseña al ingresar `****`.
 
 ## Tabla rápida de conexiones
 
@@ -126,15 +124,11 @@ También incorpora el estado `CONTRASENIA_DINAMICA` para cambiar la contraseña 
 | Matriz LED 8×8 | C0–C7 | PE0–PE7 |
 | Matriz LED 8×8 | F0–F7 | PE8–PE15 |
 
-La correspondencia física utilizada para la matriz 1088AS se encuentra en [`docs/conexiones.md`](docs/conexiones.md).
 
 ## Documentación
 
-- [Arquitectura del sistema](docs/arquitectura.md)
 - [Diagramas de estados](docs/diagramas_estados.md)
 - [Tabla de conexiones](docs/conexiones.md)
-- [Explicación del código](docs/explicacion_codigo.md)
-- [Pruebas de funcionamiento](docs/pruebas.md)
 
 ## Requisitos
 
