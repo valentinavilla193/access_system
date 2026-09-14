@@ -4,9 +4,8 @@
 #include "stm32f4xx.h"
 
 /* ---------------------------------------------------------------------
- * Codigo BASE del curso (sin modificar en su logica): driver del
- * teclado matricial 4x4 (multiplexacion IN-OUT) + maquina de estados
- * de antirrebote.
+ * Codigo BASE del curso: driver del teclado matricial 4x4 (multiplexacion IN-OUT)
+ * + maquina de estados de antirrebote.
  * --------------------------------------------------------------------- */
 
 typedef enum {
@@ -20,4 +19,4 @@ void Keypad_Init(void);
 char Raw_Keypad_Scan(void);
 char Keypad_Read_Debounced(void);
 
-#endif /* KEYPAD_H */
+#endif 
