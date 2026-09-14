@@ -10,9 +10,9 @@ static Estados_principales_t sistema_Estado = ESPERANDO;
 
 static char ultimas_4_teclas[4] = {0};
 static char pass_Real[4] = {'A','B','C','D'};
-static const char cambio_De_Clave[4] = {'*','*','*','*'};
+static const char cambio_De_Clave[4] = {'1','5','9','A'};
 
-static bool Comprobar_Contrasenia(const char a[4], const char b[4]) {
+static bool Comprobar_pass(const char a[4], const char b[4]) {
     for (int i = 0; i < 4; i++) {
         if (a[i] != b[i]) {
             return false; // Contraseña incorrecta
@@ -24,7 +24,7 @@ static bool Comprobar_Contrasenia(const char a[4], const char b[4]) {
 void Sistema(void) {
     char tecla = Keypad_Read_Debounced();
     static uint8_t i = 0;                   // digitos ingresados en INGRESANDO
-    static uint8_t k = 0;                   // digitos ingresados en CONTRASENIA_DINAMICA
+    static uint8_t k = 0;                   // digitos ingresados en PASS_DINAMICA
     static uint32_t tiempo_De_Espera_Imagen = 0;
 
     switch (sistema_Estado) {
@@ -48,10 +48,10 @@ void Sistema(void) {
             break;
 
         case VALIDANDO:
-            if (Comprobar_Contrasenia(ultimas_4_teclas, cambio_De_Clave)) {
+            if (Comprobar_pass(ultimas_4_teclas, cambio_De_Clave)) {
                 sistema_Estado = PASS_DINAMICA;
                 k = 0;
-            } else if (Comprobar_Contrasenia(ultimas_4_teclas, pass_Real)) {
+            } else if (Comprobar_pass(ultimas_4_teclas, pass_Real)) {
                 sistema_Estado = ACCEDIO;
                 Led_Handler(LED_ACCESO);
             } else {
