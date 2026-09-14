@@ -7,9 +7,10 @@ typedef enum {
     VALIDANDO,
     ACCEDIO,
     DENEGADO,
-    CONTRASENIA_DINAMICA
+    PASS_DINAMICA
 } Estados_principales_t;
 
 void Sistema(void);
 
-#endif /* SISTEMA_H */
+#endif 
+
