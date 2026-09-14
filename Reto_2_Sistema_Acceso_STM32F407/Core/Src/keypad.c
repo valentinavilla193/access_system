@@ -13,17 +13,17 @@ static char last_valid_key = '\0';
  * ----------------------------------------------------------------------*/
 
 void Keypad_Init(void) {
-    // 1. Habilitar reloj para GPIOA (Bit 0)
+    // Habilitar reloj para GPIOA (Bit 0)
     RCC->AHB1ENR |= (1 << 0);
 
-    // 2. Configurar PA0 a PA3 como salidas (Filas)
+    // Configurar PA0 a PA3 como salidas (Filas)
     GPIOA->MODER &= ~(0x000000FF); // Limpiar bits 0-7
     GPIOA->MODER |= 0x00000055;    // Establecer como 01 (General purpose output)
 
-    // 3. Configurar PA4 a PA7 como entradas (Columnas)
+    // Configurar PA4 a PA7 como entradas (Columnas)
     GPIOA->MODER &= ~(0x0000FF00); // Limpiar bits 8-15 (00 = Input)
 
-    // 4. Activar resistencias Pull-Up internas para PA4-PA7
+    // Activar resistencias Pull-Up internas para PA4-PA7
     GPIOA->PUPDR &= ~(0x0000FF00); // Limpiar registros PUPDR
     GPIOA->PUPDR |= 0x00005500;    // Establecer como 01 (Pull-up)
 }
@@ -97,3 +97,4 @@ char Keypad_Read_Debounced(void) {
 
     return validated_key;
 }
+
