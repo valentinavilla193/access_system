@@ -9,7 +9,7 @@ stateDiagram-v2
     ESPERANDO --> INGRESANDO: tecla válida
     INGRESANDO --> VALIDANDO: 4 caracteres
 
-    VALIDANDO --> CONTRASENIA_DINAMICA: entrada = ****
+    VALIDANDO --> PASS_DINAMICA: entrada = ****
     VALIDANDO --> ACCEDIO: contraseña correcta
     VALIDANDO --> DENEGADO: contraseña incorrecta
 
