@@ -9,7 +9,7 @@
 static Estados_principales_t sistema_Estado = ESPERANDO;
 
 static char ultimas_4_teclas[4] = {0};
-static char contrasenia_Real[4] = {'A','B','C','D'};
+static char pass_Real[4] = {'A','B','C','D'};
 static const char cambio_De_Clave[4] = {'*','*','*','*'};
 
 static bool Comprobar_Contrasenia(const char a[4], const char b[4]) {
@@ -49,9 +49,9 @@ void Sistema(void) {
 
         case VALIDANDO:
             if (Comprobar_Contrasenia(ultimas_4_teclas, cambio_De_Clave)) {
-                sistema_Estado = CONTRASENIA_DINAMICA;
+                sistema_Estado = PASS_DINAMICA;
                 k = 0;
-            } else if (Comprobar_Contrasenia(ultimas_4_teclas, contrasenia_Real)) {
+            } else if (Comprobar_Contrasenia(ultimas_4_teclas, pass_Real)) {
                 sistema_Estado = ACCEDIO;
                 Led_Handler(LED_ACCESO);
             } else {
@@ -69,9 +69,9 @@ void Sistema(void) {
             }
             break;
 
-        case CONTRASENIA_DINAMICA:
+        case PASS_DINAMICA:
             if (tecla != '\0' && k < 4) {
-                contrasenia_Real[k++] = tecla;
+                pass_Real[k++] = tecla;
                 Led_Handler(LED_TECLA);
                 if (k >= 4) {
                     Led_Handler(LED_NADA);
